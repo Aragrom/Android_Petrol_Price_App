@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id = "@+id/imgViewStarSign"
-            android:src = "@drawable/ic_menu_action_quit"
+            android:src = "@drawable/dollar"
             android:layout_gravity="right"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
@@ -20,43 +20,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
-            android:textColor = "#556B2F"
-            android:layout_below="@+id/imgViewStarSign"
+            android:textColor = "#FFFFFF"
             android:text=" "
-            android:id = "@+id/diesel_out" />
+            android:id = "@+id/diesel_out"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
-            android:textColor = "#5F9EA0"
+            android:textColor = "#FFFFFF"
             android:layout_below="@+id/diesel_out"
             android:text=" "
-            android:id = "@+id/unleaded_out" />
+            android:id = "@+id/unleaded_out"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
             android:layout_below="@+id/unleaded_out"
+            android:textColor = "#FFFFFF"
             android:text=" "
-            android:id = "@+id/super_unleaded_out" />
+            android:id = "@+id/super_unleaded_out"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
             android:text=" "
+            android:textColor = "#FFFFFF"
             android:layout_below="@+id/super_unleaded_out"
-            android:id = "@+id/LPG_out" />
+            android:id = "@+id/LPG_out"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
+            android:textColor = "#FFFFFF"
             android:layout_below="@+id/LPG_out"
             android:text=" "
-            android:id = "@+id/LRP_out" />
+            android:id = "@+id/LRP_out"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="20dp"/>
 
         <Button
             android:layout_width="wrap_content"

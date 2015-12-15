@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent = "true"
         android:id = "@+id/imgViewStarSign"
-        android:src = "@drawable/ic_menu_action_quit"
+        android:src = "@drawable/safe_icon"
         android:layout_gravity="right"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance = "?android:attr/textAppearanceMedium"
-        android:textColor = "#556B2F"
+        android:textColor = "#FFFFFF"
+        android:layout_marginTop="150dp"
         android:text=" "
-        android:id = "@+id/city_out" />
+        android:id = "@+id/city_out"
+        android:layout_marginLeft="100dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance = "?android:attr/textAppearanceMedium"
-        android:textColor = "#5F9EA0"
+        android:textColor = "#FFFFFF"
         android:text=" "
-        android:id = "@+id/post_out" />
+        android:id = "@+id/post_out"
+        android:layout_marginLeft="100dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:textColor = "#FFFFFF"
+        android:layout_marginLeft="100dp"
         android:text=" "
         android:id = "@+id/region_out" />
 
