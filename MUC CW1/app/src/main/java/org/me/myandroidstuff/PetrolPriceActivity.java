@@ -57,6 +57,8 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     mcSaveData mcSDPrefs;                           //
     private Button displaySaved;
     String sOutputMsg;
+    private Button displayCavnas;
+    private Button displayPrices;
 
 	private TextView response;						// for testing - for displaying full string from RSS stream
 	private TextView errorText;						// for testing - displaying error message from RSS stream
@@ -70,7 +72,7 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     private ListView listView;
     
     private String strResult;						// hold the value returned from RSS stream
-    private QueryObject queryObject;				// Data Structure (Object) for holding and handling petrol pricing data
+    public QueryObject queryObject;				// Data Structure (Object) for holding and handling petrol pricing data
     private ArrayAdapter<String> adapter;			// Loads data from queryObject into the listView
     private Parser parser = new Parser();			// Object that creates a queryObject then parses data into it
     
@@ -135,6 +137,7 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     {
         super.onCreate(savedInstanceState);
 
+        queryObject = new QueryObject();
     	savedSpinner = spinSearchType = (Spinner)findViewById(R.id.type);
 
         // Create About dialog
@@ -158,6 +161,10 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     private void setUpUI()
     {
     	setContentView(R.layout.main);
+        displayCavnas = (Button) findViewById(R.id.btn_canvas);
+        displayCavnas.setOnClickListener(this);
+        displayPrices = (Button) findViewById(R.id.btn_prices);
+        displayPrices.setOnClickListener(this);
         displaySaved = (Button) findViewById(R.id.btnSavedData);
         displaySaved.setOnClickListener(this);
         searchButton = (Button) findViewById(R.id.btn_search);
@@ -230,6 +237,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     	spinSearchType.setSelection(savedSpinner.getSelectedItemPosition());
     	
     	searchButton.setEnabled(true);
+        displaySaved.setEnabled(true);
+        displayPrices.setEnabled(true);
+        displayCavnas.setEnabled(true);
     	
     	Log.e("PetrolPriceActivity", "Reloading: Input 'Value'(Text Box) and 'Type'(Spinner)");
     	
@@ -239,6 +249,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     		progressBar.setVisibility(View.VISIBLE);
     		txt_percentage.setText(savedTextView.getText());
     		searchButton.setEnabled(false); // So multiple searches are not activated
+            displaySaved.setEnabled(false);
+            displayCavnas.setEnabled(false);
+            displayPrices.setEnabled(false);
     	}
     	
     	if(bHasResult) // Set true once a first search has been successful
@@ -266,7 +279,11 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 			// If internet connection is established
 			if(isOnline()){
 				searchButton.setEnabled(false);
+                displaySaved.setEnabled(false);
+                displayCavnas.setEnabled(false);
+                displayPrices.setEnabled(false);
 				progressBar.setVisibility(View.VISIBLE);
+                txt_percentage.setVisibility(View.VISIBLE);
 				new customAsyncTask().execute();
 				bHasResult = true;
 				
@@ -291,9 +308,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
             userStarSignInfo = dbStarSignMgr.findStarSign(usersStarSign.getsStarSign()); // Lab 4
             */
             // Save preferences
-            //mcSDPrefs.savePreferences("City", mcSDPrefs.getCity());
-            //mcSDPrefs.savePreferences("PostCode", mcSDPrefs.getPostCode());
-            //mcSDPrefs.savePreferences("Region", mcSDPrefs.getRegion());
+            mcSDPrefs.savePreferences("City", mcSDPrefs.getCity());
+            mcSDPrefs.savePreferences("PostCode", mcSDPrefs.getPostCode());
+            mcSDPrefs.savePreferences("Region", mcSDPrefs.getRegion());
 
             //Starting a new Intent
             Intent mcOutput_Screen = new Intent(getApplicationContext(), mcOutputScreen.class);
@@ -308,10 +325,30 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
             mcOutput_Screen.putExtra("mcOutputMsg", sOutputMsg); //Lab 5*/
 
             //Log the output data
-            Log.e("n", "Got through create about to start output screen");
+            Log.e("PetrolPriceActivity", "Got through create about to Prefs output screen");
 
             startActivity(mcOutput_Screen);
             //finish();
+        }
+
+        if(aview == displayPrices)
+        {
+            //Starting a new Intent
+            Intent mcSaveData_Output = new Intent(getApplicationContext(), mcSaveDataOutput.class);
+
+            //Send data to the new Activity
+            //sOutputMsg = "TEST";
+            mcSaveData_Output.putExtra("queryObject", queryObject); //Lab 3
+
+            // Send serialised Object to new activity for display - Lab 4
+            /*mcOutput_Screen.putExtra("starSignInfo", userStarSignInfo); // Lab 4
+            sOutputMsg = mcYourDay.getsOutputMsg(); // Lab 5
+            mcOutput_Screen.putExtra("mcOutputMsg", sOutputMsg); //Lab 5*/
+
+            //Log the output data
+            Log.e("PetrolPriceActivity", "Got through create about to start Price output screen");
+
+            startActivity(mcSaveData_Output);
         }
 		
 	}// End of onClick
@@ -482,7 +519,11 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
      
     	 txt_percentage.setText("Download complete");
     	 searchButton.setEnabled(true);
+         displaySaved.setEnabled(true);
+         displayCavnas.setEnabled(true);
+         displayPrices.setEnabled(true);
     	 progressBar.setVisibility(View.INVISIBLE);
+         txt_percentage.setVisibility(View.INVISIBLE);
     	 
     	 
     	 //Get data for list view

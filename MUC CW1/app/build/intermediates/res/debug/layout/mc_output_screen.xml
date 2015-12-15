@@ -8,7 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent = "true"
         android:id = "@+id/imgViewStarSign"
-        android:src = "@drawable/ic_menu_action_quit"/>
+        android:src = "@drawable/ic_menu_action_quit"
+        android:layout_gravity="right"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +37,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Saved Data"
+        android:text="Back"
         android:id="@+id/btnBack"
         android:layout_gravity="center_horizontal"
         android:onClick = "onClick"/>

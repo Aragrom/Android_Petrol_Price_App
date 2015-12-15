@@ -8,7 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent = "true"
         android:id = "@+id/imgViewStarSign"
-        android:src = "@drawable/ic_menu_action_quit"/>
+        android:src = "@drawable/ic_menu_action_quit"
+        android:layout_gravity="right"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +17,7 @@
         android:textAppearance = "?android:attr/textAppearanceMedium"
         android:textColor = "#556B2F"
         android:text=" "
-        android:id = "@+id/city_out" />
+        android:id = "@+id/diesel_out" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,14 +25,28 @@
         android:textAppearance = "?android:attr/textAppearanceMedium"
         android:textColor = "#5F9EA0"
         android:text=" "
-        android:id = "@+id/post_out" />
+        android:id = "@+id/unleaded_out" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance = "?android:attr/textAppearanceMedium"
         android:text=" "
-        android:id = "@+id/region_out" />
+        android:id = "@+id/super_unleaded_out" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:text=" "
+        android:id = "@+id/LPG_out" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:text=" "
+        android:id = "@+id/LRP_out" />
 
     <Button
         android:layout_width="wrap_content"

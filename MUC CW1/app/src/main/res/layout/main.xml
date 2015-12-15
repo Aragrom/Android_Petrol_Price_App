@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dip"
             android:minWidth="140dp"
-            android:text="View Saved"
+            android:text="Display Prefs"
             android:layout_alignBottom="@+id/btn_search"
             android:layout_alignRight="@+id/progress"/>
 
@@ -132,6 +132,28 @@
             android:entries="@array/entry_type"
             android:prompt="@string/choose" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Draw Canvas"
+            android:id="@+id/btn_canvas"
+            android:layout_below="@+id/urlResponse"
+            android:layout_alignLeft="@+id/btn_search"
+            android:layout_alignStart="@+id/btn_search"
+            android:layout_alignRight="@+id/btn_search"
+            android:layout_alignEnd="@+id/btn_search"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Display Prices"
+            android:id="@+id/btn_prices"
+            android:layout_alignTop="@+id/errorText"
+            android:layout_alignRight="@+id/btnSavedData"
+            android:layout_alignEnd="@+id/btnSavedData"
+            android:layout_alignLeft="@+id/btnSavedData"
+            android:layout_alignStart="@+id/btnSavedData"/>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -154,4 +176,3 @@
     </RelativeLayout>
 
 </LinearLayout>
-

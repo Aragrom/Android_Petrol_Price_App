@@ -2,12 +2,14 @@ package org.me.myandroidstuff;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /*
  * ============================
  * Data Structure (Object) with methods managing pricing data
  *============================
  */	
-public class QueryObject {
+public class QueryObject implements Serializable {
 	
 	//(Could have used vector)								// { 137.9 , 123.5 , 121.7 }
 	private float[] aFloatUnleaded = new float[3];			// UNLEADED

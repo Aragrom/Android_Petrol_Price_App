@@ -5,14 +5,21 @@ package org.me.myandroidstuff;
  */
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import org.me.myandroidstuff.PetrolPriceActivity;
 
 /**
  * Created by Graham on 08/10/2015.
@@ -21,9 +28,13 @@ public class mcSaveDataOutput extends Activity implements View.OnClickListener {
 
     SharedPreferences mcSharedPrefs;
     Button btnBack;
-    TextView tvCity;
-    TextView tvPostCode;
-    TextView tvRegion;
+    QueryObject queryObject;
+    TextView tvDiesel;
+    TextView tvUnleaded;
+    TextView tvSuperUnleaded;
+    TextView tvLPG;
+    TextView tvLRP;
+    FragmentManager fmAboutDialogue;                // Lab 2 - Fragment Manager
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -31,20 +42,25 @@ public class mcSaveDataOutput extends Activity implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mc_display_shared_prefs); // app main UI screen
+        fmAboutDialogue = this.getFragmentManager();
 
         //setup, access and listen for the back button
         btnBack = (Button) findViewById(R.id.btnBack);
         btnBack.setOnClickListener(this);
 
         //create text view for output
-        tvCity = (TextView) findViewById(R.id.city_out);
-        tvPostCode = (TextView) findViewById(R.id.post_out);
-        tvRegion = (TextView) findViewById(R.id.region_out);
+        tvDiesel = (TextView) findViewById(R.id.diesel_out);
+        tvUnleaded = (TextView) findViewById(R.id.unleaded_out);
+        tvSuperUnleaded = (TextView) findViewById(R.id.super_unleaded_out);
+        tvLPG = (TextView) findViewById(R.id.LPG_out);
+        tvLRP = (TextView) findViewById(R.id.LRP_out);
 
         //load any saved preferences
         mcSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        loadSavedPreferences();
         Log.e("n", "SDOutput msg");
+        Intent iMainAct = getIntent();
+        queryObject = (QueryObject)iMainAct.getSerializableExtra("queryObject");
+        loadPricesPreferences();
     }
 
     public void onClick(View view){
@@ -53,13 +69,46 @@ public class mcSaveDataOutput extends Activity implements View.OnClickListener {
         finish();
     }
 
-    private void loadSavedPreferences(){
+    /*
+	 * ============================
+	 * Inflate menu vith menu items
+	 *============================
+	 */
+    public boolean onCreateOptionsMenu(Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.mc_menu, menu);
+        return true;
+    }
 
-        //tvCity.setText(tvCity.getText() + mcSharedPrefs.getString("City", "Stirling"));
-        //tvPostCode.setText(tvPostCode.getText() + mcSharedPrefs.getString("PostCode", "FK95SE"));
-        //tvRegion.setText(tvRegion.getText() + mcSharedPrefs.getString("Region", "StirlingShire"));
-        tvCity.setText("Hello");
-        tvPostCode.setText("World");
-        tvRegion.setText("Sup");
+    /*
+	 * ============================
+	 * Handle menu selection click events
+	 *============================
+	 */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.mQuit:
+                finish();
+                return true;
+            case R.id.mAbout:
+                // About Dialogue;
+                DialogFragment mcAboutDlg = new mcAboutDialogue();
+                mcAboutDlg.show(fmAboutDialogue, "mc_About_Dlg");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void loadPricesPreferences()
+    {
+        tvDiesel.setText(queryObject.getDieselPrices());
+        tvUnleaded.setText(queryObject.getUnleadedPrices());
+        tvSuperUnleaded.setText(queryObject.getSuperUnleadedPrices());
+        tvLPG.setText(queryObject.getLPGPrices());
+        tvLRP.setText(queryObject.getLRPPrices());
     }
 }

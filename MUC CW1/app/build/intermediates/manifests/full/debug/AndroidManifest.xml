@@ -33,6 +33,10 @@
         <activity
             android:name="org.me.myandroidstuff.mcOutputScreen"
             android:label="@string/mc_SavedData" />
+        // Shared Price output screen activity
+        <activity
+            android:name="org.me.myandroidstuff.mcSaveDataOutput"
+            android:label="@string/mc_SavedData" />
     </application>
 
 </manifest>

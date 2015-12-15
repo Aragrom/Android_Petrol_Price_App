@@ -23,6 +23,10 @@
         <activity android:name = "org.me.myandroidstuff.mcOutputScreen"
                   android:label = "@string/mc_SavedData"></activity>
 
+        // Shared Price output screen activity
+        <activity android:name = "org.me.myandroidstuff.mcSaveDataOutput"
+                  android:label = "@string/mc_SavedData"></activity>
+
     </application>
     
     <uses-permission android:name="android.permission.INTERNET" />
