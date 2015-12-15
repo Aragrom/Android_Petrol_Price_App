@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent = "true"
+        android:id = "@+id/imgViewStarSign"
+        android:src = "@drawable/ic_menu_action_quit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:textColor = "#556B2F"
+        android:text=" "
+        android:id = "@+id/city_out" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:textColor = "#5F9EA0"
+        android:text=" "
+        android:id = "@+id/post_out" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:text=" "
+        android:id = "@+id/region_out" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Saved Data"
+        android:id="@+id/btnBack"
+        android:layout_gravity="center_horizontal"
+        android:onClick = "onClick"/>
+
+</LinearLayout>

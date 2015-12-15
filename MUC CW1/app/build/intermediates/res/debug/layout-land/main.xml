@@ -1,0 +1,162 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation = "horizontal"
+    android:baselineAligned="false"
+    android:background="@drawable/landscape_background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Search Value:"
+            android:textSize="15dip" 
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progress"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:textSize="15dip"
+            android:minWidth="140dp"
+            android:text="Search" />
+
+        <Button
+            android:id="@+id/btnSavedData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_search"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textSize="15dip"
+            android:minWidth="140dp"
+            android:text="View Saved" />
+
+        <TextView
+            android:id="@+id/txt_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below = "@id/progress"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="15dip"
+            android:gravity="center"
+            android:textColor="#FFFFFF"  />
+        
+        <TextView
+            android:id="@+id/urlResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/btn_search"
+            android:text="URL response"
+            android:textSize="15dip"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/urlResponse"
+            android:layout_centerHorizontal="true"
+            android:text="URL response"
+            android:textSize="15dip"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/value"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:text="Stirling"
+            android:textColor="#000000" 
+            android:textSize="15dip"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:maxLines = "1"
+            android:drawablePadding="10dp">
+
+            <requestFocus />
+        </EditText>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/type"
+            android:visibility="invisible"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/search_type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/value"
+            android:text="Search Type:"
+            android:textSize="15dip"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFFFFF"  />
+
+        <Spinner
+            android:id="@+id/type"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/search_type"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="15dip"
+            android:entries="@array/entry_type"
+            android:prompt="@string/choose" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+        
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:textSize="15dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="#000000"
+            android:textColor="#FFFFFF"  >
+        </ListView>
+        
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+
+<!-- From: file:/C:/Users/Graham/AndroidStudioProjects/MUC%20CW1/app/src/main/res/layout-land/main.xml -->

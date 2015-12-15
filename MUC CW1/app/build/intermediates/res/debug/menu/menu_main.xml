@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.me.myandroidstuff.PetrolPriceActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings" />
+</menu>
+<!-- From: file:/C:/Users/Graham/AndroidStudioProjects/MUC%20CW1/app/src/main/res/menu/menu_main.xml -->
