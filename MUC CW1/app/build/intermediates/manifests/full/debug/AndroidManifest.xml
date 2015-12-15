@@ -32,11 +32,11 @@
         // Shared prefs output screen activity
         <activity
             android:name="org.me.myandroidstuff.mcOutputScreen"
-            android:label="@string/mc_SavedData" />
+            android:label="@string/mc_SavedPrefScreen" />
         // Shared Price output screen activity
         <activity
             android:name="org.me.myandroidstuff.mcSaveDataOutput"
-            android:label="@string/mc_SavedData" />
+            android:label="@string/mc_PriceOutScreen" />
     </application>
 
 </manifest>

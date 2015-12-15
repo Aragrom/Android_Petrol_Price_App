@@ -10,15 +10,19 @@
         <item>County</item>
     </string-array>
     <string name="action_settings">Settings</string>
-    <string name="mc_OutputScrn">OutPut Screen</string>
-    <string name="mc_SavedData">Your Preferences</string>
+    <string name="mc_PriceOutScreen">Price Type and Price</string>
+    <string name="mc_SavedPrefScreen">Your Saved Preferences</string>
     <string name="mc_Bio">Your Biorhythms</string>
     <string name="mc_Map">EK Famous 5</string>
     <string name="mBio">Biorhythms</string>
     <string name="mMap">Map EK Star Signs</string>
     <string name="mQuit">Quit</string>
     <string name="mAbout">About</string>
-    <string name="dialog_About">About Message.</string>
+    <string name="dialog_About">Petrol Price Activity takes either a City, PostCode or Region returning petrol prices for the available types.</string>
+    <string name="General_About">Petrol Price Activity takes either a City, PostCode or Region returning petrol prices for the available types.</string>
+    <string name="Price_About">The Price Activity displays the price from the serialized "Query Object" - filled with petrol data.</string>
+    <string name="Preference_About">The Preference Activity displays the preferences saved for the user.</string>
+    <string name="Canvas_About">The Canvas Activity demonstrates the ability to draw to canvas.</string>
     <string name="dialog_About_OK_btn">Ok</string>
     <string name="mc_CB">Shake to see the Future!</string>
     <string name="mCrystalB">Crystal Ball</string>

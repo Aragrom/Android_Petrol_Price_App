@@ -36,8 +36,8 @@
             android:layout_below="@+id/txt_percentage"
             android:layout_alignLeft="@+id/btn_canvas"
             android:layout_alignStart="@+id/btn_canvas"
-            android:layout_toLeftOf="@+id/btnSavedData"
-            android:layout_toStartOf="@+id/btnSavedData"/>
+            android:layout_toStartOf="@+id/btnSavedData"
+            android:layout_toLeftOf="@+id/btnSavedData"/>
 
         <Button
             android:id="@+id/btnSavedData"

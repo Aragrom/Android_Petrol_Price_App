@@ -597,19 +597,31 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
-		switch (item.getItemId()) {
-			case R.id.mQuit:
-				finish();
-				return true;
-			case R.id.mAbout:
-				// About Dialogue;
-				DialogFragment mcAboutDlg = new mcAboutDialogue();
-				mcAboutDlg.show(fmAboutDialogue, "mc_About_Dlg");
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
+
+        // handle menu selected item and displaying dialogue
+        switch (item.getItemId()) {
+            case R.id.mQuit:
+                finish();
+                return true;
+            case R.id.mAbout:
+                DialogFragment mcAboutDlg = new mcAboutDialogue();
+                mcAboutDlg.show(fmAboutDialogue, "mc_About_Dlg");
+                return true;
+            case R.id.mPriceAbout:
+                DialogFragment mcPriceDlg = new PriceAboutDialogue();
+                mcPriceDlg.show(fmAboutDialogue, "mc_About_Dlg");
+                return true;
+            case R.id.mPrefAbout:
+                DialogFragment mcPrefDlg = new PrefAboutDialogue();
+                mcPrefDlg.show(fmAboutDialogue, "mc_About_Dlg");
+                return true;
+            case R.id.mCanvasAbout:
+                DialogFragment mcCanvasDlg = new CanvasAboutDialogue();
+                mcCanvasDlg.show(fmAboutDialogue, "mc_About_Dlg");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
 	}
     
 }// End of PetrolPriceActivity class

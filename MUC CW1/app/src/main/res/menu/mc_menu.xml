@@ -3,12 +3,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id = "@+id/mBio"
         android:icon="@drawable/ic_menu_action_about"
-        android:title = "Menu Options:" />
+        android:title = "                                           >" />
     <item android:id = "@+id/mQuit"
-        android:title = "- Quit"
+        android:title = "Quit"
         android:icon = "@drawable/ic_menu_action_quit"/>
     <item android:id = "@+id/mAbout"
-        android:title = "- About"
+        android:title = "General About"
         android:icon = "@drawable/ic_menu_action_about"/>
+    <item android:id = "@+id/mPrefAbout"
+          android:title = "Preferences About"
+          android:icon = "@drawable/ic_menu_action_about"/>
+    <item android:id = "@+id/mPriceAbout"
+          android:title = "Price About"
+          android:icon = "@drawable/ic_menu_action_about"/>
+    <item android:id = "@+id/mCanvasAbout"
+          android:title = "Canvas About"
+          android:icon = "@drawable/ic_menu_action_about"/>
 </menu>
 

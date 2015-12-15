@@ -1550,7 +1550,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0c003d;
         public static final int action_mode_bar_stub=0x7f0c003c;
         public static final int action_mode_close_button=0x7f0c0025;
-        public static final int action_settings=0x7f0c0077;
+        public static final int action_settings=0x7f0c007a;
         public static final int activity_chooser_view_content=0x7f0c0026;
         public static final int alertTitle=0x7f0c0030;
         public static final int always=0x7f0c0016;
@@ -1596,6 +1596,9 @@ containing a value of this type.
         public static final int list_view=0x7f0c005c;
         public static final int mAbout=0x7f0c0076;
         public static final int mBio=0x7f0c0074;
+        public static final int mCanvasAbout=0x7f0c0079;
+        public static final int mPrefAbout=0x7f0c0077;
+        public static final int mPriceAbout=0x7f0c0078;
         public static final int mQuit=0x7f0c0075;
         public static final int media_actions=0x7f0c006a;
         public static final int middle=0x7f0c0015;
@@ -1709,16 +1712,20 @@ containing a value of this type.
         public static final int menu_main=0x7f0d0001;
     }
     public static final class string {
-        public static final int URL_response=0x7f05000d;
+        public static final int Canvas_About=0x7f05000d;
+        public static final int General_About=0x7f05000e;
+        public static final int Preference_About=0x7f05000f;
+        public static final int Price_About=0x7f050010;
+        public static final int URL_response=0x7f050011;
         public static final int abc_action_bar_home_description=0x7f050000;
-        public static final int abc_action_bar_home_description_format=0x7f05000e;
-        public static final int abc_action_bar_home_subtitle_description_format=0x7f05000f;
+        public static final int abc_action_bar_home_description_format=0x7f050012;
+        public static final int abc_action_bar_home_subtitle_description_format=0x7f050013;
         public static final int abc_action_bar_up_description=0x7f050001;
         public static final int abc_action_menu_overflow_description=0x7f050002;
         public static final int abc_action_mode_done=0x7f050003;
         public static final int abc_activity_chooser_view_see_all=0x7f050004;
         public static final int abc_activitychooserview_choose_application=0x7f050005;
-        public static final int abc_search_hint=0x7f050010;
+        public static final int abc_search_hint=0x7f050014;
         public static final int abc_searchview_description_clear=0x7f050006;
         public static final int abc_searchview_description_query=0x7f050007;
         public static final int abc_searchview_description_search=0x7f050008;
@@ -1726,24 +1733,24 @@ containing a value of this type.
         public static final int abc_searchview_description_voice=0x7f05000a;
         public static final int abc_shareactionprovider_share_with=0x7f05000b;
         public static final int abc_shareactionprovider_share_with_application=0x7f05000c;
-        public static final int abc_toolbar_collapse_description=0x7f050011;
-        public static final int action_settings=0x7f050012;
-        public static final int app_name=0x7f050013;
-        public static final int choose=0x7f050014;
-        public static final int dialog_About=0x7f050015;
-        public static final int dialog_About_OK_btn=0x7f050016;
-        public static final int hello=0x7f050017;
-        public static final int mAbout=0x7f050018;
-        public static final int mBio=0x7f050019;
-        public static final int mCrystalB=0x7f05001a;
-        public static final int mMap=0x7f05001b;
-        public static final int mQuit=0x7f05001c;
-        public static final int mc_Bio=0x7f05001d;
-        public static final int mc_CB=0x7f05001e;
-        public static final int mc_Map=0x7f05001f;
-        public static final int mc_OutputScrn=0x7f050020;
-        public static final int mc_SavedData=0x7f050021;
-        public static final int status_bar_notification_info_overflow=0x7f050022;
+        public static final int abc_toolbar_collapse_description=0x7f050015;
+        public static final int action_settings=0x7f050016;
+        public static final int app_name=0x7f050017;
+        public static final int choose=0x7f050018;
+        public static final int dialog_About=0x7f050019;
+        public static final int dialog_About_OK_btn=0x7f05001a;
+        public static final int hello=0x7f05001b;
+        public static final int mAbout=0x7f05001c;
+        public static final int mBio=0x7f05001d;
+        public static final int mCrystalB=0x7f05001e;
+        public static final int mMap=0x7f05001f;
+        public static final int mQuit=0x7f050020;
+        public static final int mc_Bio=0x7f050021;
+        public static final int mc_CB=0x7f050022;
+        public static final int mc_Map=0x7f050023;
+        public static final int mc_PriceOutScreen=0x7f050024;
+        public static final int mc_SavedPrefScreen=0x7f050025;
+        public static final int status_bar_notification_info_overflow=0x7f050026;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f070073;
