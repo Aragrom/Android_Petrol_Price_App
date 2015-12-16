@@ -30,6 +30,7 @@ public class CanvasActivity extends Activity{
         setContentView(R.layout.mc_canvas_screen); // app main UI screen
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(new mySurfaceView(this));
+        fmAboutDialogue = this.getFragmentManager();
     }
 
     /*

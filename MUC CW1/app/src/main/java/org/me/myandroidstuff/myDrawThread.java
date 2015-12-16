@@ -72,7 +72,7 @@ public class myDrawThread extends Thread
         if(run) {
             canvas.save();
             canvas.restore();
-            canvas.drawColor(Color.WHITE);
+            canvas.drawColor(Color.DKGRAY);
             paint.setStyle(Paint.Style.FILL);
             drawAxes(canvas);
             paint.setColor(Color.RED);

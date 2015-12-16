@@ -5,10 +5,12 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by Graham on 12/12/2015.
  */
-public class mcSaveData extends Activity {
+public class mcSaveData extends Activity implements Serializable {
 
     // *********************************************
     // Declare variables etc.

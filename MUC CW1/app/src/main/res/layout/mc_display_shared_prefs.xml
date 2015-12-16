@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
-            android:textColor = "#FFFFFF"
+            android:textColor = "#ff2a1a"
             android:text=" "
             android:id = "@+id/diesel_out" />
 
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
-            android:textColor = "#FFFFFF"
+            android:textColor = "#2137ff"
             android:layout_below="@+id/diesel_out"
             android:text=" "
             android:id = "@+id/unleaded_out" />
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textAppearance = "?android:attr/textAppearanceMedium"
             android:layout_below="@+id/unleaded_out"
-            android:textColor = "#FFFFFF"
+            android:textColor = "#5cf53d"
             android:text=" "
             android:id = "@+id/super_unleaded_out" />
 

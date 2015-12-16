@@ -182,7 +182,7 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <!-- From: file:/C:/Users/Graham/AndroidStudioProjects/MUC%20CW1/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="Canvas_About">The Canvas Activity demonstrates the ability to draw to canvas.</string>
+    <string name="Canvas_About">The Canvas Activity displays the history of the Petrol Price Rates. RED : Diesel  GREEN : Unleaded  BLUE : Super Unleaded.</string>
     <string name="General_About">Petrol Price Activity takes either a City, PostCode or Region returning petrol prices for the available types.</string>
     <string name="Preference_About">The Preference Activity displays the preferences saved for the user.</string>
     <string name="Price_About">The Price Activity displays the price from the serialized "Query Object" - filled with petrol data.</string>
@@ -216,7 +216,7 @@
     <string name="hello">Hello World!</string>
     <string name="mAbout">About</string>
     <string name="mBio">Biorhythms</string>
-    <string name="mCanvas">Drawing to Canvas</string>
+    <string name="mCanvas">Petrol Price History</string>
     <string name="mCrystalB">Crystal Ball</string>
     <string name="mMap">Map EK Star Signs</string>
     <string name="mQuit">Quit</string>

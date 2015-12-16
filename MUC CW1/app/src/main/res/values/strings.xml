@@ -22,9 +22,9 @@
     <string name="General_About">Petrol Price Activity takes either a City, PostCode or Region returning petrol prices for the available types.</string>
     <string name="Price_About">The Price Activity displays the price from the serialized "Query Object" - filled with petrol data.</string>
     <string name="Preference_About">The Preference Activity displays the preferences saved for the user.</string>
-    <string name="Canvas_About">The Canvas Activity demonstrates the ability to draw to canvas.</string>
+    <string name="Canvas_About">The Canvas Activity displays the history of the Petrol Price Rates. RED : Diesel  GREEN : Unleaded  BLUE : Super Unleaded.</string>
     <string name="dialog_About_OK_btn">Ok</string>
     <string name="mc_CB">Shake to see the Future!</string>
     <string name="mCrystalB">Crystal Ball</string>
-    <string name="mCanvas">Drawing to Canvas</string>
+    <string name="mCanvas">Petrol Price History</string>
 </resources>

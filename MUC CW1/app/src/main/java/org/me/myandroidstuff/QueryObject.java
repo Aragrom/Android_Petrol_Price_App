@@ -10,14 +10,16 @@ import java.io.Serializable;
  *============================
  */	
 public class QueryObject implements Serializable {
-	
+
+    public String objectID;
+
 	//(Could have used vector)								// { 137.9 , 123.5 , 121.7 }
-	private float[] aFloatUnleaded = new float[3];			// UNLEADED
-	private float[] aFloatDiesel = new float[3];			// DIESEL
-	private float[] aFloatSuperUnleaded = new float[3];		// SUPER UNLEADED
-	private float[] aFloatLPG = new float[3];				// LIQUID PETROLEUM GAS
-	private float[] aFloatLRP = new float[3];				// LEAD REPLACEMENT PETROL
-	private int iFuelTypeCount = 0;							// Each time on element [0] new fuel type has been found (increment)
+	public float[] aFloatUnleaded = new float[3];			// UNLEADED
+	public float[] aFloatDiesel = new float[3];			// DIESEL
+	public float[] aFloatSuperUnleaded = new float[3];		// SUPER UNLEADED
+	public float[] aFloatLPG = new float[3];				// LIQUID PETROLEUM GAS
+	public float[] aFloatLRP = new float[3];				// LEAD REPLACEMENT PETROL
+	public int iFuelTypeCount = 0;							// Each time on element [0] new fuel type has been found (increment)
 	
 	
 	/*

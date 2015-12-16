@@ -10,8 +10,6 @@ import java.net.URLConnection;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.app.ActionBar;
-import org.me.myandroidstuff.mcOutputScreen;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
@@ -25,7 +23,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -33,7 +30,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -41,8 +37,6 @@ import android.widget.ProgressBar;
 import android.widget.ArrayAdapter;
 import android.widget.ScrollView;
 import android.widget.Spinner;
-import org.me.myandroidstuff.QueryObject;
-import android.support.v7.app.AppCompatActivity;
 
 /*
  * ============================
@@ -285,8 +279,21 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 				progressBar.setVisibility(View.VISIBLE);
                 txt_percentage.setVisibility(View.VISIBLE);
 				new customAsyncTask().execute();
-				bHasResult = true;
-				
+
+
+                Log.e("PetrolPriceActivity", "About to launch database");
+                // Create database handler instance
+                DataBaseManager dbMgr = new DataBaseManager(this, "newDataBase.s3db",null,1); // Lab 4
+                try {
+                    dbMgr.dbCreate();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Log.e("PetrolPriceActivity", "Got through database!!!");
+
+                // Add query object to database
+
+                bHasResult = true;
 			}
 			
 			// If not online display this information
