@@ -4,33 +4,23 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.concurrent.ExecutionException;
-
 /**
- * Created by Graham on 12/12/2015.
+ * Created by Graham on 16/12/2015.
  */
-public class mcOutputScreen extends Activity implements View.OnClickListener {
+public class SavedPrefOutputActivity extends Activity implements View.OnClickListener {
 
     FragmentManager fmAboutDialogue;                // Lab 2 - Fragment Manager
     SharedPreferences mcSharedPrefs;
@@ -63,27 +53,6 @@ public class mcOutputScreen extends Activity implements View.OnClickListener {
         mcSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         loadSavedPreferences();
         Log.e("n", "SDOutput msg");
-
-        //////////////////
-        //Resources res = getResources();
-        //Bitmap bitmap = BitmapFactory.decodeResource(res, R.drawable.ic_menu_action_about);
-        //Canvas canvas = new Canvas(bitmap.copy(Bitmap.Config.ARGB_8888, true));
-
-        //Drawable d = getResources().getDrawable(R.drawable.ic_menu_action_about);
-        //d.setBounds(0, 0, 100, 100);
-        //d.draw(canvas);
-        /////////////////////////
-
-        //Display Star Sign Image
-        //ivStarSign = (ImageView)findViewById(R.id.imgViewStarSign); // Lab 3
-
-        //Intent iMainAct = getIntent(); // Lab 3
-
-        //setup image
-        /*String sImagePath = "drawable/" + starSignInfo.getStarSignImg(); // Lab 3
-        Context appContext = getApplicationContext(); // Lab 3
-        int imgResID = appContext.getResources().getIdentifier(sImagePath, "drawable", "com.example.graham.mondaysChild.app"); // Lab 3
-        ivStarSign.setImageResource(imgResID); // Lab 3*/
     }
 
     public void onClick(View view) {
@@ -143,11 +112,8 @@ public class mcOutputScreen extends Activity implements View.OnClickListener {
 
     private void loadSavedPreferences(){
 
-        //tvCity.setText(tvCity.getText() + mcSharedPrefs.getString("City", "Stirling"));
-        //tvPostCode.setText(tvPostCode.getText() + mcSharedPrefs.getString("PostCode", "FK95SE"));
-        //tvRegion.setText(tvRegion.getText() + mcSharedPrefs.getString("Region", "StirlingShire"));
-        tvCity.setText("City: " + "Stirling");
-        tvPostCode.setText("PostCode: " + "FK95SE");
-        tvRegion.setText("Region: " + "StirlingShire");
+        tvCity.setText("City:" + tvCity.getText() + mcSharedPrefs.getString("City", "Stirling"));
+        tvPostCode.setText("PostCode:" + tvPostCode.getText() + mcSharedPrefs.getString("PostCode", "FK95SE"));
+        tvRegion.setText("Region:" + mcSharedPrefs.getString("Region", "StirlingShire"));
     }
 }

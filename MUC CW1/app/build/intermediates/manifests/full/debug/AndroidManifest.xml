@@ -31,11 +31,11 @@
         </activity>
         // Shared prefs output screen activity
         <activity
-            android:name="org.me.myandroidstuff.mcOutputScreen"
+            android:name="org.me.myandroidstuff.SavedPrefOutputActivity"
             android:label="@string/mc_SavedPrefScreen" />
         // Shared Price output screen activity
         <activity
-            android:name="org.me.myandroidstuff.mcSaveDataOutput"
+            android:name="org.me.myandroidstuff.QueryOutputActivity"
             android:label="@string/mc_PriceOutScreen" />
         // Declare Canvas screen activity
         <activity

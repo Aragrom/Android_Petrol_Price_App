@@ -1,8 +1,5 @@
 package org.me.myandroidstuff;
 
-/**
- * Created by Graham on 12/12/2015.
- */
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.DialogFragment;
@@ -19,12 +16,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import org.me.myandroidstuff.PetrolPriceActivity;
 
 /**
- * Created by Graham on 08/10/2015.
+ * Created by Graham on 16/12/2015.
  */
-public class mcSaveDataOutput extends Activity implements View.OnClickListener {
+public class QueryOutputActivity extends Activity implements View.OnClickListener {
 
     SharedPreferences mcSharedPrefs;
     Button btnBack;
@@ -124,3 +120,4 @@ public class mcSaveDataOutput extends Activity implements View.OnClickListener {
         tvLRP.setText(queryObject.getLRPPrices());
     }
 }
+

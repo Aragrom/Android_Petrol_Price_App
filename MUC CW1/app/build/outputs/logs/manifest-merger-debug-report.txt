@@ -58,13 +58,13 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:18:17
 	android:name
 		ADDED from AndroidManifest.xml:18:27
-activity#org.me.myandroidstuff.mcOutputScreen
+activity#org.me.myandroidstuff.SavedPrefOutputActivity
 ADDED from AndroidManifest.xml:23:9
 	android:label
 		ADDED from AndroidManifest.xml:24:19
 	android:name
 		ADDED from AndroidManifest.xml:23:19
-activity#org.me.myandroidstuff.mcSaveDataOutput
+activity#org.me.myandroidstuff.QueryOutputActivity
 ADDED from AndroidManifest.xml:27:9
 	android:label
 		ADDED from AndroidManifest.xml:28:19

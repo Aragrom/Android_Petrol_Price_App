@@ -1,6 +1,5 @@
 package org.me.myandroidstuff;
 
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.util.Log;
@@ -8,14 +7,14 @@ import android.util.Log;
 import java.io.Serializable;
 
 /**
- * Created by Graham on 12/12/2015.
+ * Created by Graham on 16/12/2015.
  */
-public class mcSaveData extends Activity implements Serializable {
+public class SavedPrefActivity extends Activity implements Serializable {
 
     // *********************************************
     // Declare variables etc.
     // *********************************************
-    SharedPreferences mcSharedPrefs;
+    SharedPreferences sharedPrefs;
     private String strCity;
     private String strPostCode;
     private String strRegion;
@@ -45,13 +44,13 @@ public class mcSaveData extends Activity implements Serializable {
     // **************************************************
     // Declare constructor and date manipulation methods.
     // **************************************************
-    public mcSaveData(SharedPreferences mcSDPrefs){
+    public SavedPrefActivity(SharedPreferences mcSDPrefs){
 
         setCity("Stirling");
         setPostCode("FK95SE");
         setRegion("StirlingShire");
         try {
-            this.mcSharedPrefs = mcSDPrefs;
+            this.sharedPrefs = mcSDPrefs;
         }
         catch (Exception e) {
             Log.e("n", "Pref Manager is NULL");
@@ -62,21 +61,21 @@ public class mcSaveData extends Activity implements Serializable {
 
     public void savePreferences(String key, boolean value) {
 
-        SharedPreferences.Editor editor = mcSharedPrefs.edit();
+        SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putBoolean(key, value);
         editor.commit();
     }
 
     public void savePreferences(String key, String value) {
 
-        SharedPreferences.Editor editor = mcSharedPrefs.edit();
+        SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putString(key, value);
         editor.commit();
     }
 
     public void savePreferences(String key, int value) {
 
-        SharedPreferences.Editor editor = mcSharedPrefs.edit();
+        SharedPreferences.Editor editor = sharedPrefs.edit();
         editor.putInt(key, value);
         editor.commit();
     }

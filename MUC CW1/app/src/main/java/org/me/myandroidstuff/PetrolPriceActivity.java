@@ -48,14 +48,12 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 {
 	FragmentManager fmAboutDialogue;                // Lab 2 - Fragment Manager
     SharedPreferences mcSharedPrefs;                // Stores users data as saved prefs
-    mcSaveData mcSDPrefs;                           //
-    private Button displaySaved;
-    String sOutputMsg;
-    private Button displayCavnas;
-    private Button displayPrices;
+    SavedPrefActivity savedPrefActivity;            // Activity to hold the values for users Preferences
+    private Button displaySaved;                    // Button that onClick() launches SavedPrefActivity
+    private Button displayCavnas;                   // Button that onClick() launches CanvasActivity
+    private Button displayPrices;                   // Button that onClick() launches QueryOutputActivity
 
 	private TextView response;						// for testing - for displaying full string from RSS stream
-	private TextView errorText;						// for testing - displaying error message from RSS stream
 
     private Button searchButton;					// UI Component using onClickListener activate "main program loop"
     private ProgressBar progressBar;				//     "  "     for displaying the progress of the download
@@ -66,7 +64,7 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     private ListView listView;
     
     private String strResult;						// hold the value returned from RSS stream
-    public QueryObject queryObject;				// Data Structure (Object) for holding and handling petrol pricing data
+    public QueryObject queryObject;				    // Data Structure (Object) for holding and handling petrol pricing data
     private ArrayAdapter<String> adapter;			// Loads data from queryObject into the listView
     private Parser parser = new Parser();			// Object that creates a queryObject then parses data into it
     
@@ -131,7 +129,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
     {
         super.onCreate(savedInstanceState);
 
+        // Create a a new queryObject for storing object for storing petrol prices
         queryObject = new QueryObject();
+        // Link spinner with layout
     	savedSpinner = spinSearchType = (Spinner)findViewById(R.id.type);
 
         // Create About dialog
@@ -139,9 +139,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 
         // Create Default preferences for the app.
         mcSharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        mcSDPrefs = new mcSaveData(mcSharedPrefs);
+        savedPrefActivity = new SavedPrefActivity(mcSharedPrefs);
 
-        mcSDPrefs.setDefaultPrefs();                    // Set the default prefs
+        savedPrefActivity.setDefaultPrefs();                    // Set the default prefs
         setUpUI();
     } // End of onCreate
     
@@ -272,14 +272,19 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 		{
 			// If internet connection is established
 			if(isOnline()){
+
+                // Disable buttons from being clicked
 				searchButton.setEnabled(false);
                 displaySaved.setEnabled(false);
                 displayCavnas.setEnabled(false);
                 displayPrices.setEnabled(false);
+
+                // Make progress bar and text visible
 				progressBar.setVisibility(View.VISIBLE);
                 txt_percentage.setVisibility(View.VISIBLE);
-				new customAsyncTask().execute();
 
+                // execute
+				new customAsyncTask().execute();
 
                 Log.e("PetrolPriceActivity", "About to launch database");
                 // Create database handler instance
@@ -291,8 +296,6 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
                 }
                 Log.e("PetrolPriceActivity", "Got through database!!!");
 
-                // Add query object to database
-
                 bHasResult = true;
 			}
 			
@@ -301,63 +304,44 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 				Toast.makeText(PetrolPriceActivity.this,"No Internet", Toast.LENGTH_SHORT).show();
 			}
 		}
+
+        // if click was to display saved preferences
         if(aview == displaySaved)
         {
-            /*mcStarSignsInfoDBMgr dbStarSignMgr = new mcStarSignsInfoDBMgr(this, "starsigns.s3db", null, 1);
-            // Create database handler instance
-            try {
-                dbStarSignMgr.dbCreate();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            // Save preferences based on selection
+            if(String.valueOf(spinSearchType.getSelectedItem()) == "Town") savedPrefActivity.savePreferences("City", String.valueOf(spinSearchType.getSelectedItem()));
+            else if(String.valueOf(spinSearchType.getSelectedItem()) == "Postcode") savedPrefActivity.savePreferences("PostCode", String.valueOf(spinSearchType.getSelectedItem()));
+            else if(String.valueOf(spinSearchType.getSelectedItem()) == "County") savedPrefActivity.savePreferences("Region", String.valueOf(spinSearchType.getSelectedItem()));
 
-            // Retrieve Star Sign Info
-            userStarSignInfo = dbStarSignMgr.findStarSign(usersStarSign.getsStarSign()); // Lab 4
-            */
-            // Save preferences
-            mcSDPrefs.savePreferences("City", mcSDPrefs.getCity());
-            mcSDPrefs.savePreferences("PostCode", mcSDPrefs.getPostCode());
-            mcSDPrefs.savePreferences("Region", mcSDPrefs.getRegion());
+            Log.e("PetrolPriceActivity",String.valueOf(spinSearchType.getSelectedItem()));
 
             //Starting a new Intent
-            Intent mcOutput_Screen = new Intent(getApplicationContext(), mcOutputScreen.class);
-
-            //Send data to the new Activity
-            //sOutputMsg = "TEST";
-            //mcOutput_Screen.putExtra("mcOutputMsg", sOutputMsg); //Lab 3
-
-            // Send serialised Object to new activity for display - Lab 4
-            /*mcOutput_Screen.putExtra("starSignInfo", userStarSignInfo); // Lab 4
-            sOutputMsg = mcYourDay.getsOutputMsg(); // Lab 5
-            mcOutput_Screen.putExtra("mcOutputMsg", sOutputMsg); //Lab 5*/
+            Intent savedPrefsOutputActivity = new Intent(getApplicationContext(), SavedPrefOutputActivity.class);
 
             //Log the output data
             Log.e("PetrolPriceActivity", "Got through create about to Prefs output screen");
 
-            startActivity(mcOutput_Screen);
+            startActivity(savedPrefsOutputActivity);
             //finish();
         }
 
+        // if click was to display prices from query
         if(aview == displayPrices)
         {
             //Starting a new Intent
-            Intent mcSaveData_Output = new Intent(getApplicationContext(), mcSaveDataOutput.class);
+            Intent queryOutputActivity = new Intent(getApplicationContext(), QueryOutputActivity.class);
 
             //Send data to the new Activity
             //sOutputMsg = "TEST";
-            mcSaveData_Output.putExtra("queryObject", queryObject); //Lab 3
-
-            // Send serialised Object to new activity for display - Lab 4
-            /*mcOutput_Screen.putExtra("starSignInfo", userStarSignInfo); // Lab 4
-            sOutputMsg = mcYourDay.getsOutputMsg(); // Lab 5
-            mcOutput_Screen.putExtra("mcOutputMsg", sOutputMsg); //Lab 5*/
+            queryOutputActivity.putExtra("queryObject", queryObject); //Lab 3
 
             //Log the output data
             Log.e("PetrolPriceActivity", "Got through create about to start Price output screen");
 
-            startActivity(mcSaveData_Output);
+            startActivity(queryOutputActivity);
         }
 
+        // if click was to draw the price history to the canvas
         if(aview == displayCavnas)
         {
             Intent intentDraw = new Intent(this, CanvasActivity.class);
@@ -490,9 +474,6 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
          {
          	// Handle error
          	response.setText("Error");
-         	// Add error info to log for diagnostics
-         	errorText.setText(ae.toString());
-         	errorText.setVisibility(View.VISIBLE);
          }
     	 
     	 while(progress_status<100)
@@ -516,9 +497,9 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
      {
     	 super.onProgressUpdate(values);
     
-    	 progressBar.setProgress(values[0]);
+    	 progressBar.setProgress(values[0]);                        // set progress bar value
     	 
-    	 txt_percentage.setText("Downloading " +values[0] + "%");
+    	 txt_percentage.setText("Downloading " +values[0] + "%");   // update text message
     
      }
    
@@ -531,10 +512,14 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
             "Downloaded", Toast.LENGTH_SHORT).show();
      
     	 txt_percentage.setText("Download complete");
+
+         // Make buttons clickable
     	 searchButton.setEnabled(true);
          displaySaved.setEnabled(true);
          displayCavnas.setEnabled(true);
          displayPrices.setEnabled(true);
+
+         // Hide download bar and text
     	 progressBar.setVisibility(View.INVISIBLE);
          txt_percentage.setVisibility(View.INVISIBLE);
     	 
