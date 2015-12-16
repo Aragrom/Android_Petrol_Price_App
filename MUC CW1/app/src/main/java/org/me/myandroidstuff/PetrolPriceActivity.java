@@ -350,6 +350,12 @@ public class PetrolPriceActivity extends Activity implements View.OnClickListene
 
             startActivity(mcSaveData_Output);
         }
+
+        if(aview == displayCavnas)
+        {
+            Intent intentDraw = new Intent(this, CanvasActivity.class);
+            this.startActivity(intentDraw);
+        }
 		
 	}// End of onClick
     

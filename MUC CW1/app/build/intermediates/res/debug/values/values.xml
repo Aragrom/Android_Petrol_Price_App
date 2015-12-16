@@ -216,6 +216,7 @@
     <string name="hello">Hello World!</string>
     <string name="mAbout">About</string>
     <string name="mBio">Biorhythms</string>
+    <string name="mCanvas">Drawing to Canvas</string>
     <string name="mCrystalB">Crystal Ball</string>
     <string name="mMap">Map EK Star Signs</string>
     <string name="mQuit">Quit</string>

@@ -37,6 +37,10 @@
         <activity
             android:name="org.me.myandroidstuff.mcSaveDataOutput"
             android:label="@string/mc_PriceOutScreen" />
+        // Declare Canvas screen activity
+        <activity
+            android:name="org.me.myandroidstuff.CanvasActivity"
+            android:label="@string/mCanvas" />
     </application>
 
 </manifest>

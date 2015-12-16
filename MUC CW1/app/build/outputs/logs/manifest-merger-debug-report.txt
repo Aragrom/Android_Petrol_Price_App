@@ -70,11 +70,17 @@ ADDED from AndroidManifest.xml:27:9
 		ADDED from AndroidManifest.xml:28:19
 	android:name
 		ADDED from AndroidManifest.xml:27:19
+activity#org.me.myandroidstuff.CanvasActivity
+ADDED from AndroidManifest.xml:31:9
+	android:label
+		ADDED from AndroidManifest.xml:32:19
+	android:name
+		ADDED from AndroidManifest.xml:31:19
 uses-permission#android.permission.INTERNET
-ADDED from AndroidManifest.xml:32:5
+ADDED from AndroidManifest.xml:36:5
 	android:name
-		ADDED from AndroidManifest.xml:32:22
+		ADDED from AndroidManifest.xml:36:22
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from AndroidManifest.xml:33:5
+ADDED from AndroidManifest.xml:37:5
 	android:name
-		ADDED from AndroidManifest.xml:33:22
+		ADDED from AndroidManifest.xml:37:22

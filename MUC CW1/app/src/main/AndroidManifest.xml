@@ -27,6 +27,10 @@
         <activity android:name = "org.me.myandroidstuff.mcSaveDataOutput"
                   android:label = "@string/mc_PriceOutScreen"></activity>
 
+        // Declare Canvas screen activity
+        <activity android:name = "org.me.myandroidstuff.CanvasActivity"
+                  android:label = "@string/mCanvas"></activity>
+
     </application>
     
     <uses-permission android:name="android.permission.INTERNET" />

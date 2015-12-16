@@ -26,4 +26,5 @@
     <string name="dialog_About_OK_btn">Ok</string>
     <string name="mc_CB">Shake to see the Future!</string>
     <string name="mCrystalB">Crystal Ball</string>
+    <string name="mCanvas">Drawing to Canvas</string>
 </resources>
